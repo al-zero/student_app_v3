@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'models/job.dart';
+import '../models/job.dart';
 
-import 'models/global.dart';
+import '../models/global.dart';
 
 void main() => runApp(HomeView());
 
@@ -65,8 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                     */
                 Container(
-                  height: 750,
-                  margin: EdgeInsets.only(top: 60),
+                  height: 600,
+                  margin: EdgeInsets.only(top: 20),
                   padding: EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-  List<String> jobCategories = ["Blog", "Margarine", "Maps", "Quiz", "Directory", "O-Radio"];
+  List<String> jobCategories = ["Blog", "Margarine", "Maps", "Quiz", "Directory", "O-Radio", "Student", "Timetable"];
 
   Map jobCatToIcon = {
     "Blog" : Icon(Icons.monetization_on, color: lightBlueIsh, size: 50,),
@@ -105,12 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
     "Quiz" : Icon(Icons.question_answer, color: lightBlueIsh, size: 50),
     "Student Directory" : Icon(Icons.contact_mail, color: lightBlueIsh, size: 50),
     "Online Radio" : Icon(Icons.radio, color: lightBlueIsh, size: 50),
+    "Student " : Icon(Icons.contact_mail, color: lightBlueIsh, size: 50),
+    "Timetable " : Icon(Icons.radio, color: lightBlueIsh, size: 50),
   };
 
   Widget getCategoryContainer(String categoryName) {
     return new Container(
-      margin: EdgeInsets.only(right: 10, left: 10, bottom: 40),
-      height: 180,
+      margin: EdgeInsets.only(right: 10, left: 10, bottom: 20),
+      height: 150,
       width: 140,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -127,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Text(categoryName, style: titileStyleLighterBlack),
           Container(
-            padding: EdgeInsets.only(top: 30),
+            padding: EdgeInsets.only(top: 10),
             height: 100,
             width: 70,
             child: FloatingActionButton(

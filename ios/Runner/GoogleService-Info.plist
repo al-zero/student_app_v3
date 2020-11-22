@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>696333415147-525091qgfo67qfrjispl75er6gu7sg3t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.696333415147-525091qgfo67qfrjispl75er6gu7sg3t</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCXQNNVaTp0AB5om-g0-i3p5wZ5_j6YMDQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>696333415147</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sabawual.studentAppV3</string>
+	<key>PROJECT_ID</key>
+	<string>studentassistantapp-v1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>studentassistantapp-v1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:696333415147:ios:99dd2d5970dac9dd5d84ae</string>
+	<key>DATABASE_URL</key>
+	<string>https://studentassistantapp-v1.firebaseio.com</string>
+</dict>
+</plist>

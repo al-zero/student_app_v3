@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:student_app_v3/home_view.dart';
+import 'package:student_app_v3/views/home_view.dart';
 import 'package:student_app_v3/pages.dart';
+import 'package:student_app_v3/views/profile_view.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _HomeState extends State<Home>{
   final List<Widget> _children = [
     HomeView(),
     ChatPage(),
-    CampusPage(),
+    ProfileView(),
   ];
 
   void onTabTapped(int index){
