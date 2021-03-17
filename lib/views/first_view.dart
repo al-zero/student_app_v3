@@ -14,7 +14,7 @@ class FirstView extends StatelessWidget {
       body: new Container(
         width: _width,
         height: _height,
-        color: Colors.white,
+        color: Colors.lightBlue[50] ,
         child: new SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -62,7 +62,7 @@ class FirstView extends StatelessWidget {
                               primaryButtonText: "Create An Account",
                               primaryButtonRoute: "/signUp",
                               secondaryButtonText: "Maybe Later",
-                              secondaryButtonRoute: "/home",
+                              secondaryButtonRoute: "/anonymousSignIn",
                             ));
                       }),
                   SizedBox(height: _height * 0.05),

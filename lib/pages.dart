@@ -11,8 +11,11 @@ class HomePage extends StatelessWidget {
 class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.purpleAccent,
+    return Hero(
+      tag: 'Bttmtag',
+      child: Container(
+        color: Colors.purpleAccent,
+      ),
     );
   }
 }

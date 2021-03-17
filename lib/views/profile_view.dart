@@ -23,7 +23,7 @@ class ProfileView extends StatelessWidget {
         ],
       ),
       body: new  Container(
-        color: Colors.amber,
+        color: Colors.white,
       ),
     );
   }

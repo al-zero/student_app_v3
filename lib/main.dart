@@ -17,13 +17,15 @@ class MyApp extends StatelessWidget {
     return Provider(
       auth: AuthService(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(primarySwatch: Colors.green),
+        theme: ThemeData(primarySwatch: Colors.blue),
         //   home: new Home(),
         home: HomeController(),
         routes: <String, WidgetBuilder>{
           '/signUp': (BuildContext context) => SignUpView(authFormType: AuthFormType.signUp),
           '/signIn': (BuildContext context) => SignUpView(authFormType: AuthFormType.signIn),
+          '/anonymousSignIn': (BuildContext context) => SignUpView(authFormType: AuthFormType.anonymous),
           '/home': (BuildContext context) => HomeController(),
         },
       ),

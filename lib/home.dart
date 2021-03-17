@@ -12,7 +12,9 @@ class _HomeState extends State<Home>{
   int _currentIndex = 0;
   // taking widgets from the pages.dart
   final List<Widget> _children = [
-    HomeView(),
+    //HomeView(),
+    //MyHomePage(), - from stakeoverflow
+    HomePageTest(),
     ChatPage(),
     ProfileView(),
   ];
@@ -26,30 +28,35 @@ class _HomeState extends State<Home>{
   @override 
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: Colors.lightBlue[50],
       body: _children[_currentIndex],
-      bottomNavigationBar: new BottomNavigationBar(
-        onTap: onTabTapped,
-          currentIndex: _currentIndex,
-          backgroundColor: Colors.white,
-          items: [
-            BottomNavigationBarItem(
-              icon: new Icon(Icons.account_balance),
-              title: new Text('Home')
-            ),
-            BottomNavigationBarItem(
-                icon: new Icon(Icons.chat),
-                title: new Text('Chat')
-            ),
-            BottomNavigationBarItem(
-                icon: new Icon(Icons.person_outline),
-                title: new Text('Person')
-            ),
-           // TODO : make it appear
-           /* BottomNavigationBarItem(
-                icon: new Icon(Icons.person_outline),
-                title: new Text('Profile')
-            ),*/
-          ]
+      bottomNavigationBar: Hero(
+        tag: 'Bttmtag',
+        child: new BottomNavigationBar(
+          onTap: onTabTapped,
+            currentIndex: _currentIndex,
+            backgroundColor: Colors.lightBlue[50],
+            items: [
+              BottomNavigationBarItem(
+                icon: new Icon(Icons.account_balance),
+                title: new Text('Home')
+              ),
+              BottomNavigationBarItem(
+                  icon: new Icon(Icons.school),
+                  title: new Text('Classes')
+              ),
+
+              BottomNavigationBarItem(
+                  icon: new Icon(Icons.settings),
+                  title: new Text('Settings')
+              ),
+             // TODO : make it appear
+             /* BottomNavigationBarItem(
+                  icon: new Icon(Icons.person_outline),
+                  title: new Text('Profile')
+              ),*/
+            ]
+        ),
       ),
       
     );
