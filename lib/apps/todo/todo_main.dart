@@ -26,8 +26,25 @@ class TodoMain extends StatelessWidget {
   }
 }
 
-class TodoHomePage extends StatelessWidget {
-  bool isLoading = false;
+class TodoHomePage extends StatefulWidget {
+  @override
+  _TodoHomePageState createState() => _TodoHomePageState();
+}
+
+class _TodoHomePageState extends State<TodoHomePage> {
+  bool _isLoading = true;
+
+  void loadingStateController(){
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadingStateController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,16 +57,13 @@ class TodoHomePage extends StatelessWidget {
           color: Colors.black,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+
           },
 
 ),
       ),
-      body: isLoading
-          ? Center(
-          child: Container(
-            child: Text('Check your internet connection'),
-          ))
-          : ListView.builder(
+      body: _isLoading ? Center(child: Container(child: CircularProgressIndicator(),)) : ListView.builder(
+
         itemCount: todoP.todos.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(

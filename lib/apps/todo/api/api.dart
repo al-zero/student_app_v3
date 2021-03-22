@@ -17,7 +17,8 @@ class TodoProvider with ChangeNotifier {
 
 // POSTING DATA TO THE API
   void addTodo(Todo todo) async {
-    final response = await http.post('localhost:8000/api_todo/v1/',
+   // final response = await http.post('http://127.0.0.1:8000/api_todo/v1/',
+    final response = await http.post('https://alphasabawu-crm1.herokuapp.com/api_todo/v1/',
         headers: {"Content-Type": "application/json"}, body: jsonEncode(todo));
     if (response.statusCode == 201) {
       todo.id = json.decode(response.body)['id'];
@@ -29,7 +30,7 @@ class TodoProvider with ChangeNotifier {
   // DELETING DATA
   void deleteTodo(Todo todo) async {
     final response =
-        await http.delete('http://127.0.0.1:8000/api_todo/v1/${todo.id}/');
+        await http.delete('https://alphasabawu-crm1.herokuapp.com/api_todo/v1/${todo.id}/');
     if (response.statusCode == 204) {
       _todos.remove(todo);
       notifyListeners();
@@ -42,12 +43,14 @@ class TodoProvider with ChangeNotifier {
   // FETCHING DATA FROM THE API
   fetchTasks() async {
     try {
-      final url = 'http://127.0.0.1:8000/api_todo/v1/?format=json';
+     // final url = 'http://127.0.0.1:8000/api_todo/v1/?format=json';
+      final url = 'https://alphasabawu-crm1.herokuapp.com/api_todo/v1/?format=json';
       final response = await http.get(url);
       if (response.statusCode == 200) {
         var data = json.decode(response.body) as List;
         _todos = data.map<Todo>((json) => Todo.fromJson(json)).toList();
         notifyListeners();
+
       }
       if (response == null) {
         print('An error occured ');

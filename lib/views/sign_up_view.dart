@@ -133,64 +133,66 @@ class _SignUpViewState extends State<SignUpView> {
       return loading? Loading() : new Scaffold(
         backgroundColor: Colors.lightBlue[50],
 
-        body: Container(
-          // TODO : add opacity background picture
-          color: Colors.lightBlue[50],
-          height: MediaQuery
-              .of(context)
-              .size
-              .height,
-          width: MediaQuery
-              .of(context)
-              .size
-              .width,
-          child: new SafeArea(
-            child: Center(
-              child: new Column(
-                children: <Widget>[
-                  SizedBox(height: _height * 0.01),
-                  // displaying errors
-                  showAlert(),
-                  SizedBox(height: _height * 0.02),
-                  // TODO : change the image
-                  // invoking the header of the login/sign screen
-                  buildTextHeader(),
-                  SizedBox(height: _height * 0.01),
-                 Image.asset(
-                    "images/midlands.jpg",
-                    // "images/midlands.jpeg",
-                    // "images/msu.JPG",
-                    //"images/msu.jpeg",
-                   // "images/edited.jpg",
-                    height: _height * 0.15,
-                    width: _width * 100.0,
-                  ),
-                  // Snake Button
-
-                  Padding(
-                    padding: const EdgeInsets.only(right:20.0, left: 20.0, top: 10.0),
-                    child: SnakeButton(
-                      child: Text('Our Hands Our Minds Our Destiny'),
-                      borderColor: Colors.yellowAccent,
-                      borderWidth: 3,
-                      duration: const Duration(seconds: 3),
-                      onTap: (){
-                        print('on tap');
-                      },
+        body: SingleChildScrollView(
+          child: Container(
+            // TODO : add opacity background picture
+            color: Colors.lightBlue[50],
+            height: MediaQuery
+                .of(context)
+                .size
+                .height,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            child: new SafeArea(
+              child: Center(
+                child: new Column(
+                  children: <Widget>[
+                    SizedBox(height: _height * 0.01),
+                    // displaying errors
+                    showAlert(),
+                    SizedBox(height: _height * 0.02),
+                    // TODO : change the image
+                    // invoking the header of the login/sign screen
+                    buildTextHeader(),
+                    SizedBox(height: _height * 0.01),
+                   Image.asset(
+                      "images/midlands.jpg",
+                      // "images/midlands.jpeg",
+                      // "images/msu.JPG",
+                      //"images/msu.jpeg",
+                     // "images/edited.jpg",
+                      height: _height * 0.15,
+                      width: _width * 100.0,
                     ),
+                    // Snake Button
 
-                  ),
-                  SizedBox(height: _height * 0.01),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Form(
-                      key: formKey,
-                      child: new Column(
-                        children: builtInputs() + buildButtons(),
+                    Padding(
+                      padding: const EdgeInsets.only(right:20.0, left: 20.0, top: 10.0),
+                      child: SnakeButton(
+                        child: Text('Our Hands Our Minds Our Destiny'),
+                        borderColor: Colors.yellowAccent,
+                        borderWidth: 3,
+                        duration: const Duration(seconds: 3),
+                        onTap: (){
+                          print('on tap');
+                        },
+                      ),
+
+                    ),
+                    SizedBox(height: _height * 0.01),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Form(
+                        key: formKey,
+                        child: new Column(
+                          children: builtInputs() + buildButtons(),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
